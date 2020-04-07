@@ -3,7 +3,8 @@ import { user } from "../constants";
 const initState = {
   loading: false,
   errors: null,
-  users: []
+  users: [],
+  user: {}
 };
 
 const userReducer = (state = initState, action) => {
@@ -24,6 +25,12 @@ const userReducer = (state = initState, action) => {
         ...state,
         loading: false,
         users: action.payload
+      };
+    case user.FETCH_USER:
+      return {
+        ...state,
+        loading: false,
+        user: action.payload
       };
     default:
       return state;

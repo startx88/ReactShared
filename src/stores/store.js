@@ -1,22 +1,20 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-//import { composeWithDevTools } from "redux-devtools-extension";
-
+import { composeWithDevTools } from "redux-devtools-extension";
 import user from "./reducers/user";
 
-// let compose = Redux.applyMiddleware(thunk);
-// if (process.env.production === "development") {
-//   compose = composeWithDevTools(Redux.applyMiddleware(thunk));
-// }
+let compose = applyMiddleware(thunk);
+console.log(process.env.NODE_ENV);
+if (process.env.NODE_ENV === "development") {
+  compose = composeWithDevTools(applyMiddleware(thunk));
+}
 
 const reducer = combineReducers({
   user
 });
 
 // stores
-const createStores = () => {
-  const store = createStore(reducer, applyMiddleware(thunk));
+export const createStores = () => {
+  const store = createStore(reducer, compose);
   return store;
 };
-
-export default createStores;
