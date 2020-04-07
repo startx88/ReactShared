@@ -1,0 +1,6 @@
+export const user = {
+  LOADING: "LOADING",
+  FAILED: "FAILED",
+  FETCH_ALL_USER: "FETCH_ALL_USER",
+  FETCH_USER: "FETCH_USER"
+};
