@@ -16,14 +16,37 @@ const Container = props => {
     return <h1>Loading...</h1>;
   }
 
+  const fetchSingleUser = id => {
+    getUser(id);
+    console.log("user", user);
+  };
+
   return (
     <div>
       <h1>Users</h1>
-      <ul>
+      <ul className="row">
         {users.map(user => (
-          <li key={user.id}>{user.name}</li>
+          <li className="col-sm-3 mb-3" key={user.id}>
+            <div className="card">
+              <div className="card-header">{user.name}</div>
+              <div className="card-body">
+                {user.username} / {user.email}
+                <button
+                  onClick={() => fetchSingleUser(user.id)}
+                  className="btn btn-info mt-2"
+                  type="button"
+                >
+                  Get Details
+                </button>
+              </div>
+            </div>
+          </li>
         ))}
       </ul>
+
+      <div className="single-user">
+        <div>{user.name}</div>
+      </div>
     </div>
   );
 };
