@@ -28,7 +28,11 @@ const outputs = [
       redux: "createStore, combineReducers, applyMiddleware",
       axios: "axios",
       "redux-thunk": "thunk",
-      "redux-devtools-extension": "composeWithDevTools"
+      "redux-devtools-extension": "composeWithDevTools",
+      "@fortawesome/fontawesome-svg-core": "library, config",
+      "@fortawesome/free-solid-svg-icons": "freeSolidSvgIcons",
+      "@fortawesome/free-brands-svg-icons": "freeBrandsSvgIcons",
+      "@fortawesome/react-fontawesome": "reactFontawesome"
     },
     format: "umd"
   }
@@ -41,7 +45,11 @@ const common = {
     "axios",
     "redux",
     "redux-thunk",
-    "redux-devtools-extension"
+    "redux-devtools-extension",
+    "@fortawesome/fontawesome-svg-core",
+    "@fortawesome/free-solid-svg-icons",
+    "@fortawesome/free-brands-svg-icons",
+    "@fortawesome/react-fontawesome"
   ],
   plugins: [
     resolve({

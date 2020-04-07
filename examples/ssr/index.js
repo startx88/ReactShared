@@ -1,7 +1,7 @@
 const express = require("express");
 const { createElement } = require("react");
 const { renderToString } = require("react-dom/server");
-const Demo = require("ReactShared");
+const { DemoComponent } = require("ReactShared");
 
 // STATIC
 const PORT = process.env.PORT || 5000;
@@ -9,7 +9,7 @@ const app = express();
 
 // ROUTES
 app.get("*", (req, res, next) => {
-  const str = renderToString(createElement(Demo));
+  const str = renderToString(createElement(DemoComponent));
   const html = `
     <!DOCTYPE html>
     <html lang="en">
