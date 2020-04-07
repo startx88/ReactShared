@@ -19,27 +19,26 @@ const outputs = [
         format: 'cjs'
     },
     {
-        file: `${dist}/${bundle}.esm.js`,
-        format: 'esm'
+        file: `${dist}/${bundle}.es.js`,
+        format: 'es'
     },
     {
         name: 'ReactShared',
         file: `${dist}/${bundle}.umd.js`,
-        format: 'umd',
         globals: {
             react: "React"
-        }
+        },
+        format: 'umd',
     }
 ];
 
 const common = {
     input: 'src/index.js',
-    external: ["react"],
+    external: ['react'],
     plugins: [
         resolve(),
         babel({
-            exclude: '**/node_modules/**',
-            runtimeHelpers: true
+            exclude: 'node_modules/**',
         })
     ]
 }
