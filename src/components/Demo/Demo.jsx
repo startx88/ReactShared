@@ -1,7 +1,3 @@
-import React from "react";
-
-const DemoComponent = ({ classname, children }) => {
-  return <div className={classname}>{children}</div>;
-};
+const DemoComponent = ({ children }) => children;
 
 export default DemoComponent;

@@ -2,9 +2,9 @@
   "name": "ReactShared",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/bundle.cjs.js",
   "module": "dist/bundle.es.js",
-  "sideEffects": true,
+  "main": "dist/bundle.cjs.js",
+  "sideEffects": false,
   "scripts": {
     "clean": "rimraf dist",
     "prebuild": "npm run clean",
@@ -30,6 +30,8 @@
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-react": "^7.9.4",
     "@dump247/storybook-state": "^1.6.1",
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
     "@storybook/addon-actions": "^5.3.18",
     "@storybook/addon-knobs": "^5.3.18",
     "@storybook/addon-notes": "^5.3.18",
@@ -44,7 +46,6 @@
     "rimraf": "^3.0.2",
     "rollup": "^2.3.3",
     "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-terser": "^5.3.0"
   },
   "peerDependencies": {
@@ -62,7 +63,10 @@
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/react-fontawesome": "^0.1.9",
+    "axios": "^0.19.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
   }
 }

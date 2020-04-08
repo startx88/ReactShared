@@ -1,4 +1,3 @@
-import { themes } from "@storybook/theming";
 
 module.exports = {
   stories: ["../stories/**/*.story.[tj]s"],
@@ -9,8 +8,3 @@ module.exports = {
   ]
 };
 
-addParameters({
-  options: {
-    theme: themes.dark
-  }
-});

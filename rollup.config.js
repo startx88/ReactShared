@@ -1,7 +1,7 @@
 import babel from "rollup-plugin-babel";
-import resolve from "rollup-plugin-node-resolve";
+import resolve from "@rollup/plugin-node-resolve";
 import { terser } from "rollup-plugin-terser";
-
+import commonjs from "@rollup/plugin-commonjs";
 const dist = "dist";
 const bundle = "bundle";
 const production = !process.env.ROLLUP_WATCH;
@@ -14,7 +14,8 @@ const production = !process.env.ROLLUP_WATCH;
 const outputs = [
   {
     file: `${dist}/${bundle}.cjs.js`,
-    format: "cjs"
+    format: "cjs",
+    sourcemap: true
   },
   {
     file: `${dist}/${bundle}.es.js`,
@@ -53,32 +54,17 @@ const common = {
   ],
   plugins: [
     resolve({
-      // the fields to scan in a package.json to determine the entry point
-      // if this list contains "browser", overrides specified in "pkg.browser"
-      // will be used
       mainFields: ["module", "main"], // Default: ['module', 'main']
-
-      // not all files you want to resolve are .js files
       extensions: [".mjs", ".js", ".jsx", ".json"], // Default: [ '.mjs', '.js', '.json', '.node' ]
-
-      // whether to prefer built-in modules (e.g. `fs`, `path`) or
-      // local ones with the same names
       preferBuiltins: false, // Default: true
-
-      // If true, inspect resolved files to check that they are
-      // ES2015 modules
       modulesOnly: true, // Default: false
-
-      // Force resolving for these modules to root's node_modules that helps
-      // to prevent bundling the same package multiple times if package is
-      // imported from dependencies.
-      dedupe: ["react", "react-dom", "redux", "redux-thunk", "axios"], // Default: []
-
-      // Any additional options that should be passed through
-      // to node-resolve
       customResolveOptions: {
         moduleDirectory: "js_modules"
       }
+    }),
+    commonjs({
+      include: /node_modules/,
+      extensions: [".js", ".jsx"]
     }),
     babel({
       exclude: "node_modules/**"
