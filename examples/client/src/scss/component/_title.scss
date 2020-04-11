@@ -1,0 +1,47 @@
+.admin-page-title,
+.page-title {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: capitalize;
+  h4 {
+    small {
+      margin-top: 5px;
+      text-transform: none;
+      font-size: $base-size - 3;
+    }
+  }
+}
+
+.page-title {
+  margin-bottom: 20px;
+  padding: 0;
+  .breadcrumb {
+    margin: 0;
+    padding: 0;
+    background: none;
+  }
+}
+
+.section-title {
+  margin-bottom: 20px;
+  flex: 100%;
+  text-align: center;
+
+  small {
+    margin-top: 5px;
+    font-size: $base-size;
+    display: block;
+    color: $primary;
+  }
+}
+
+.title {
+  border-bottom: 1px solid lighten($border-color, 20%);
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  h4 {
+    text-transform: capitalize;
+  }
+}

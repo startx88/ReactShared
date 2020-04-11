@@ -1,0 +1,47 @@
+.navbar {
+  border: none;
+  border-radius: 0;
+  z-index: $z-index;
+  &-brand {
+    margin-right: 0;
+    display: flex;
+    align-items: center;
+    color: $white;
+    padding: 0;
+    &:hover {
+      color: $white;
+    }
+  }
+  // user header
+  &-admin {
+    padding: 0;
+    background: linear-gradient(45deg, #49cdd0, #00bcd4);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+    min-height: 54px;
+    .navbar-brand {
+      justify-content: center;
+      background-color: $white;
+      width: $brandWidth;
+      color: $info;
+      height: 54px;
+      &:hover {
+        color: $info;
+      }
+      svg {
+        g {
+          fill: $info;
+        }
+      }
+    }
+    .nav-link {
+      color: $white;
+      font-size: $medium;
+    }
+  }
+
+  // Public layout
+  &-landing {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}

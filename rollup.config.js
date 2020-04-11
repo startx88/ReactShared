@@ -28,7 +28,9 @@ const outputs = [
       react: "React",
       redux: "createStore, combineReducers, applyMiddleware",
       axios: "axios",
+      reselect: "createSelector,createSelectorCreator, defaultMemoize ,createStructuredSelector",
       "redux-thunk": "thunk",
+      "prop-types": "PropTypes",
       "redux-devtools-extension": "composeWithDevTools",
       "@fortawesome/fontawesome-svg-core": "library, config",
       "@fortawesome/free-solid-svg-icons": "freeSolidSvgIcons",
@@ -50,7 +52,9 @@ const common = {
     "@fortawesome/fontawesome-svg-core",
     "@fortawesome/free-solid-svg-icons",
     "@fortawesome/free-brands-svg-icons",
-    "@fortawesome/react-fontawesome"
+    "@fortawesome/react-fontawesome",
+    "prop-types",
+    "reselect"
   ],
   plugins: [
     resolve({

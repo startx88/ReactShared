@@ -1,0 +1,15 @@
+.personal-info {
+  h6 {
+    font-weight: bold;
+    margin-bottom: 15px;
+    span {
+      margin-right: 5px;
+      color: $violet;
+    }
+  }
+  .btn-edit-icon {
+    position: absolute;
+    top: 0;
+    right: 5px;
+  }
+}

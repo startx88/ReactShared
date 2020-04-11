@@ -1,0 +1,16 @@
+.error-boundary {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.no-post {
+  width: 100%;
+  min-height: 400px;
+  background-image: url("../../images/no-data.png");
+  background-position: center;
+  text-align: center;
+}

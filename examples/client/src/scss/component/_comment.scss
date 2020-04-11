@@ -1,0 +1,63 @@
+.leave-comment {
+  margin-top: 60px;
+  padding-top: 40px;
+  position: relative;
+  label {
+    margin-left: 10px;
+  }
+  &:before,
+  &:after {
+    position: absolute;
+    content: "";
+  }
+  &:before {
+    top: 0;
+    height: 1px;
+    background-color: #eee;
+    width: 100%;
+  }
+  &:after {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: $violet;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: -8px;
+  }
+  h4 {
+    margin-bottom: 15px;
+  }
+}
+.comments {
+  h4 {
+    margin-bottom: 20px;
+  }
+  ul {
+    padding-left: 0;
+
+    li {
+      position: relative;
+      margin-bottom: 15px;
+      &:not(:last-child) {
+        border-bottom: 1px solid #eee;
+        padding-bottom: 15px;
+      }
+      .btn {
+        position: absolute;
+        right: -10px;
+        top: -10px;
+      }
+      h6 {
+        font-size: $base-size - 3;
+        font-weight: bold;
+        color: lighten($base-dark, 15%);
+        margin-bottom: 5px;
+      }
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

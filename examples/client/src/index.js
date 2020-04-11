@@ -4,9 +4,8 @@ import App from "./App/App";
 import { Provider } from "react-redux";
 import { createStores } from "ReactShared";
 import { BrowserRouter } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-
-import "./index.css";
+import './_lib'
+import "./index.scss";
 
 // store
 

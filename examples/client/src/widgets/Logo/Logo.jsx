@@ -1,24 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ReactComponent as MainLogo } from "./logo.svg";
-const Logo = ({ brandname }) => {
+import { ReactComponent as DCLogo } from "./logo.svg";
+// Logo
+const Logo = ({ href, brandname }) => {
   return (
-    <>
-      <Link className="navbar-brand" to="/">
-        <MainLogo width="35" /> {brandname}
+    <div className="logo">
+      <Link className="navbar-brand" to={href}>
+        <DCLogo width="40" />
+        {brandname}
       </Link>
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
-    </>
+    </div>
   );
 };
 

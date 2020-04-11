@@ -4,3 +4,4 @@ export { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export * from "./stores/actions";
 export * from "./stores/constants";
 export * from "./components/Demo";
+export * from "./stores/selectors"

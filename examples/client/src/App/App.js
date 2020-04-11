@@ -1,20 +1,33 @@
-import React, { lazy, Suspense } from "react";
-import Main from "../layouts/Main";
-import { Switch, Route } from "react-router-dom";
+import React, { Suspense, useEffect } from "react";
+import "./App.css";
+import Web from "../Web/Web";
+import Spinner from "../UI/Spinner/Spinner";
+import ErrorBoundary from "../Widgets/ErrorBoundary/ErrorBoundary";
+import setAuthToken from "../_helper/setAuthToken";
+import { checkUserIsAuthenticate } from "ReactShared";
+import { useDispatch } from "react-redux";
 
-const Home = lazy(() => import("../pages/Home"));
-const Users = lazy(() => import("../pages/Users"));
+// App Component
+
+if (localStorage.token) {
+  setAuthToken(localStorage.token);
+}
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(checkUserIsAuthenticate());
+  }, [dispatch]);
+
   return (
-    <Main>
-      <Suspense fallback={<h1>Loading...</h1>}>
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/" component={Users} />
-        </Switch>
-      </Suspense>
-    </Main>
+    <Suspense
+      fallback={<Spinner svgWidthHeight="100" text="Loading..." fixed />}
+    >
+      <ErrorBoundary>
+        <Web />
+      </ErrorBoundary>
+    </Suspense>
   );
 }
 
